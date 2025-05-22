@@ -1,0 +1,14 @@
+.car-container {
+  position: relative;
+  height: 100px;
+  width: 100%;
+  overflow: visible;
+}
+
+.car {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transform: scaleX(-1);
+  transform-origin: center center;
+}

@@ -1,0 +1,27 @@
+<div class="flex justify-content-end align-items-center gap-3 py-3">
+  <!-- <div class="toggle-theme-button">
+    <p-button
+      [label]="darkMode ? '' : ''"
+      [icon]="darkMode ? 'pi pi-moon' : 'pi pi-sun'"
+      [class]="darkMode ? 'p-button-secondary' : 'p-button-warning'"
+      (onClick)="darkMode = !darkMode"
+    />
+  </div> -->
+  <div class="lan-switcher cursor-pointer" (click)="toggleLanguage()">
+    <div class="card flex justify-center align-items-center gap-2">
+      <img
+        *ngIf="currentLang === 'es'"
+        src="../../../../assets/flags/argentina.png"
+        alt="Argentina flag"
+        class="flag"
+      />
+      <img
+        *ngIf="currentLang === 'en'"
+        src="../../../../assets/flags/united-states.png"
+        alt="USA flag"
+        class="flag"
+      />
+      <p class="pi pi-chevron-down"></p>
+    </div>
+  </div>
+</div>

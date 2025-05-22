@@ -1,0 +1,89 @@
+.social-icons i {
+  background-color: #27272a;
+  border-radius: 50%;
+  padding: 0.5rem;
+}
+
+.shadow-custom {
+  box-shadow: 5px 3px 5px rgba(255, 255, 255, 0.06),
+    10px 7px 9px rgba(255, 255, 255, 0.12),
+    0px 20px 25px -8px rgba(255, 255, 255, 0.18);
+}
+
+h3 {
+  transition: transform 0.2s ease;
+  width: 110px;
+  text-align: center;
+  cursor: pointer;
+}
+
+h3.active {
+  transform: scale(1.05);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.bg-custom {
+  background-color: #27272a !important;
+}
+
+@media (max-width: 720px) and (min-width: 575px) {
+  h3 {
+    font-size: 1.1rem;
+    width: 95px;
+  }
+}
+
+@media (max-width: 574px) {
+  h3 {
+    font-size: 0.9rem;
+    width: 85px;
+  }
+}
+
+.text-size-custom {
+  h2,
+  h1 {
+    font-size: clamp(1rem, 4vw, 1.8rem);
+  }
+}
+
+.flipper {
+  .flip-card {
+    width: 112px;
+    height: 112px;
+    perspective: 1000px;
+  }
+
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+
+  .flip-card-front,
+  .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+  }
+
+  .flip-card-front img,
+  .flip-card-back img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1rem;
+  }
+
+  .flip-card-back {
+    transform: rotateY(180deg);
+  }
+}

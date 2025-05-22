@@ -1,1 +1,45 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import "primeflex/primeflex.css";
+@import "primeicons/primeicons.css";
+@import "aos/dist/aos.css";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  --color-dark: #0d0d0d;
+  --color-gray: #737373;
+  --color-light: #f2efe9;
+  --color-beige: #bfbbb4;
+  --color-bg: #00010d;
+}
+
+body {
+  background-color: var(--color-bg);
+  padding: 0 1rem;
+  overflow-x: hidden;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  color: var(--color-light);
+  line-height: 25px;
+}
+
+p {
+  max-width: 65ch;
+}
+
+h2 {
+  padding-bottom: 0.5rem;
+}

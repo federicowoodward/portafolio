@@ -1,0 +1,88 @@
+<header>
+  <app-top-buttons></app-top-buttons>
+  <div
+    class="flex flex-column-reverse gap-4 sm:gap-0 sm:flex-row justify-content-between align-items-center sm:pt-3 pb-2 sm:mt-0"
+  >
+    <div
+      class="flex flex-column text-white justify-content-start align-items-center sm:align-items-start gap-3 text-size-custom"
+    >
+      <h1 class="text-3xl sm:text-5xl">Federico Woodward</h1>
+      <h2>{{ "HEADER.SUBTITLE" | translate }}</h2>
+      <p-chip
+        label="{{ 'HEADER.LOCATION' | translate }}"
+        icon="pi pi-map-marker text-white"
+        class="text-sm bg-custom text-white custom-scale"
+      />
+      <div class="flex gap-2 social-icons">
+        <i class="pi pi-envelope custom-scale"></i>
+        <i class="pi pi-github custom-scale"></i>
+        <i class="pi pi-linkedin custom-scale"></i>
+      </div>
+    </div>
+    <div class="flipper">
+      <div class="flip-card cursor-pointer">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <p-avatar
+              image="https://media.licdn.com/dms/image/v2/D4D03AQE5O58ay5iAhA/profile-displayphoto-shrink_800_800/B4DZOodwPjGUAc-/0/1733698192770?e=1753315200&v=beta&t=TdAopNwxIsUOrlY05YvahgIXYsX4nP3Xxi4a1xkoZjA"
+              size="xlarge"
+              shape="circle"
+              class="h-7rem w-7rem xs:h-8rem xs:w-8rem shadow-custom"
+            />
+          </div>
+          <div class="flip-card-back image-fit">
+            <p-avatar
+              image="../assets/olaf.jpeg"
+              size="xlarge"
+              shape="circle"
+              class="h-7rem w-7rem xs:h-8rem xs:w-8rem shadow-custom"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="flex flex-column sm:flex-row gap-5 align-items-center justify-content-center py-2 my-2"
+  >
+    <div class="flex gap-5">
+      <h3
+        [routerLink]="['/about']"
+        class="cursor-pointer"
+        routerLinkActive="active"
+      >
+        {{ "NAV.ABOUT" | translate }}
+      </h3>
+      <h3 [routerLink]="['/experience']" routerLinkActive="active">
+        {{ "NAV.EXPERIENCE" | translate }}
+      </h3>
+    </div>
+
+    <div class="flex gap-0">
+      <h3
+        [routerLink]="['/education']"
+        class="cursor-pointer"
+        routerLinkActive="active"
+      >
+        {{ "NAV.EDUCATION" | translate }}
+      </h3>
+      <h3
+        [routerLink]="['/skills']"
+        class="cursor-pointer"
+        routerLinkActive="active"
+      >
+        {{ "NAV.SKILLS" | translate }}
+      </h3>
+      <h3
+        [routerLink]="['/projects']"
+        class="cursor-pointer"
+        routerLinkActive="active"
+      >
+        {{ "NAV.PROJECTS" | translate }}
+      </h3>
+    </div>
+  </div>
+
+  <p-divider />
+</header>
