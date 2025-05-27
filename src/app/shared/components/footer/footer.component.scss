@@ -12,3 +12,14 @@
   transform: scaleX(-1);
   transform-origin: center center;
 }
+
+.footer-container {
+  opacity: 0;
+  animation: fadeIn 0.4s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}

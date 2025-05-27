@@ -1,23 +1,34 @@
-<div class="px-4 flex flex-column gap-4">
+<!-- Loader -->
+<div *ngIf="loading" class="flex justify-content-center align-items-center py-6">
+  <p>Cargando...</p>
+</div>
+
+<!-- Experiencia -->
+<div class="px-4 flex flex-column max-width" *ngIf="!loading && experienceKeys.length">
   <h2>{{ "EXPERIENCE.TITLE" | translate }}</h2>
-
-  <div *ngFor="let job of ['ENCODE', 'KUNAN', 'FREELANCE', 'TICKET']">
-    <div class="flex justify-content-between py-3">
-      <div class="flex gap-2 align-items-center">
-        <p class="pi pi-briefcase pr-1"></p>
-        <h4>{{ ("EXPERIENCE." + job + ".NAME") | translate }}</h4>
+  <div class="flex flex-column gap-4">
+    <div *ngFor="let key of experienceKeys">
+      <div class="flex justify-content-between py-3">
+        <div class="flex gap-2 align-items-center">
+          <p class="pi pi-briefcase pr-1"></p>
+          <h4>{{ experienceItems[key]?.NAME }}</h4>
+        </div>
+        <p class="text-gray-400">
+          {{ experienceItems[key]?.DATES }}
+        </p>
       </div>
-      <p class="text-gray-400">
-        {{ job === 'ENCODE' ? '2024 - Actualidad' :
-           job === 'KUNAN' ? '2023 - 2024' :
-           job === 'FREELANCE' ? '2022 - Actualidad' :
-           '2024 - Actualidad' }}
-      </p>
-    </div>
-    <p>{{ ("EXPERIENCE." + job + ".ROLE") | translate }}</p>
 
-    <p class="pt-3">{{ ("EXPERIENCE." + job + ".P1") | translate }}</p>
-    <p class="pt-3" *ngIf="'EXPERIENCE.' + job + '.P2' | translate as p2">{{ p2 }}</p>
-    <p class="pt-3" *ngIf="'EXPERIENCE.' + job + '.P3' | translate as p3">{{ p3 }}</p>
+      <p>{{ experienceItems[key]?.ROLE }}</p>
+
+      <ng-container *ngFor="let p of (experienceItems[key]?.PARAGRAPHS || [])">
+        <p class="pt-3">{{ p }}</p>
+      </ng-container>
+
+      <div class="flex gap-2 flex-wrap py-2 mt-3">
+        <ng-container *ngFor="let icon of (experienceItems[key]?.ICONS || [])">
+          <app-tech-icon [name]="icon"></app-tech-icon>
+        </ng-container>
+      </div>
+    </div>
   </div>
 </div>

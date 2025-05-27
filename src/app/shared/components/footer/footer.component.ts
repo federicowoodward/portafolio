@@ -1,8 +1,11 @@
 import { Component, AfterViewInit } from '@angular/core';
 import { gsap } from 'gsap';
+import { AllTechIconsComponent } from '../tech-icons/all-tech-icons';
+import { ContactComponent } from '../contact/contact.component';
+import { DividerModule } from 'primeng/divider';
 @Component({
   selector: 'app-footer',
-  imports: [],
+  imports: [AllTechIconsComponent, ContactComponent, DividerModule],
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.scss',
 })
@@ -15,7 +18,6 @@ export class FooterComponent implements AfterViewInit {
     const carWidth = car.offsetWidth;
 
     const maxX = containerWidth - 120;
-    console.log('maxX', maxX);
 
     gsap.to(car, {
       x: maxX,

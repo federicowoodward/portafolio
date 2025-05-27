@@ -1,1 +1,77 @@
-  <h1 class="">Educacion</h1>
+<div class="px-4 flex flex-column max-width">
+  <div class="flex gap-2 align-items-center">
+    <h2>
+      {{ "EDUCATION.TITLE" | translate }}
+      <span *ngIf="selectedKey"
+        >/ {{ "EDUCATION.ITEMS." + selectedKey + ".NAME" | translate }}</span
+      >
+    </h2>
+  </div>
+
+  <div *ngIf="!selectedKey" class="flex flex-column gap-4">
+    <div *ngFor="let key of educationKeys">
+      <div class="flex justify-content-between py-3">
+        <div class="flex gap-2 align-items-center">
+          <p class="pi pi-graduation-cap pr-1"></p>
+          <h4>{{ "EDUCATION.ITEMS." + key + ".NAME" | translate }}</h4>
+        </div>
+        <p class="text-gray-400">
+          {{ "EDUCATION.ITEMS." + key + ".DATES" | translate }}
+        </p>
+      </div>
+      <div class="flex justify-content-between gap-3">
+        <p>{{ "EDUCATION.ITEMS." + key + ".ROLE" | translate }}</p>
+        <h4
+          *ngIf="educationHasCertificate[key]"
+          class="pi pi-eye cursor-pointer text-2xl"
+          (click)="selectItem(key)"
+        ></h4>
+      </div>
+      <ng-container *ngFor="let p of getParagraphs(key)">
+        <p class="pt-3">{{ p }}</p>
+      </ng-container>
+      <div class="flex gap-2 flex-wrap py-2">
+        <ng-container *ngFor="let icon of getIcons(key)">
+          <app-tech-icon [name]="icon"></app-tech-icon>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="selectedKey" class="detalle-seleccionado">
+    <div class="flex justify-content-between py-3">
+      <div class="flex gap-2 align-items-center">
+        <p class="pi pi-graduation-cap pr-1"></p>
+        <h4>{{ "EDUCATION.ITEMS." + selectedKey + ".NAME" | translate }}</h4>
+      </div>
+      <p class="text-gray-400">
+        {{ "EDUCATION.ITEMS." + selectedKey + ".DATES" | translate }}
+      </p>
+    </div>
+    <div class="flex justify-content-between gap-3">
+      <p>{{ "EDUCATION.ITEMS." + selectedKey + ".ROLE" | translate }}</p>
+      <h4
+        class="pi pi-eye-slash cursor-pointer text-2xl"
+        (click)="selectedKey = null"
+      ></h4>
+    </div>
+
+    <ng-container *ngFor="let p of getParagraphs(selectedKey)">
+      <p class="pt-3">{{ p }}</p>
+    </ng-container>
+    <div class="flex gap-2 flex-wrap py-2">
+      <ng-container *ngFor="let icon of getIcons(selectedKey)">
+        <app-tech-icon [name]="icon"></app-tech-icon>
+      </ng-container>
+    </div>
+
+    <div
+      class="flex justify-content-center align-items-center certificate mt-4"
+    >
+      <img
+        [src]="'assets/certificates/' + selectedKey.toLowerCase() + '.png'"
+        alt="Certificado"
+      />
+    </div>
+  </div>
+</div>

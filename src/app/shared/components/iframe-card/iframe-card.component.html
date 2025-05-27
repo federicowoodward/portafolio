@@ -1,0 +1,39 @@
+<a [href]="url" class="no-underline">
+  <p-card [style]="{ width: '360px', overflow: 'hidden' }">
+    <div
+      style="
+        width: auto;
+        height: 200px;
+        overflow: hidden;
+        border-radius: 8px;
+        position: relative;
+        background: #000;
+      "
+    >
+      <iframe
+        [src]="safeUrl"
+        width="1440"
+        height="750"
+        style="
+          transform: scale(0.25);
+          transform-origin: top left;
+          border: none;
+          pointer-events: none;
+        "
+      ></iframe>
+    </div>
+
+    <ng-template pTemplate="title">
+      {{ title }}
+    </ng-template>
+
+    <div class="flex gap-2 flex-wrap py-2">
+      <app-tech-icon name="nextjs"></app-tech-icon>
+      <app-tech-icon name="angular"></app-tech-icon>
+      <app-tech-icon name="css"></app-tech-icon>
+      <app-tech-icon name="node"></app-tech-icon>
+      <app-tech-icon name="git"></app-tech-icon>
+      <app-tech-icon name="docker"></app-tech-icon>
+    </div>
+  </p-card>
+</a>

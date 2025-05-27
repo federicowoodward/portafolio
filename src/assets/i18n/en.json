@@ -1,7 +1,7 @@
 {
   "HEADER": {
     "SUBTITLE": "Software developer",
-    "LOCATION": "Cordoba, Argentina"
+    "LOCATION": "Córdoba, Argentina"
   },
   "NAV": {
     "ABOUT": "About me",
@@ -16,26 +16,53 @@
     "P2": "I also have experience working with databases, API development, and building applications focused on interactive data visualization.",
     "P3": "I'm passionate about optimizing digital experiences, automating processes, and working with modern tools to deliver efficient, scalable products with thoughtful design. I'm proficient with the Git ecosystem and have basic knowledge in infrastructure deployment."
   },
-  "EXPERIENCE.TITLE": "Work Experience:",
-  "EXPERIENCE.ENCODE.NAME": "Encodelabs S.A.",
-  "EXPERIENCE.ENCODE.ROLE": "Fullstack Developer",
-  "EXPERIENCE.ENCODE.P1": "Developed various web applications using Angular and Next, creating reusable components and optimizing application performance. Built responsive interfaces based on Figma designs and ensured cross-browser compatibility.",
-  "EXPERIENCE.ENCODE.P2": "Built simple servers using Node.js and Express, implementing email delivery for different websites.",
-  "EXPERIENCE.ENCODE.P3": "Also handled the setup of Docker and Docker Compose environments for both development and production.",
-
-  "EXPERIENCE.KUNAN.NAME": "Kunan S.A.",
-  "EXPERIENCE.KUNAN.ROLE": "Fullstack Developer",
-  "EXPERIENCE.KUNAN.P1": "Developed interactive dashboards for clinical reports, handling both design and full implementation.",
-  "EXPERIENCE.KUNAN.P2": "Planned and presented the project architecture to stakeholders using technologies like Node.js, Google Connector (Apps Script), and Looker Studio.",
-
-  "EXPERIENCE.FREELANCE.NAME": "Freelance Projects",
-  "EXPERIENCE.FREELANCE.ROLE": "Web Developer",
-  "EXPERIENCE.FREELANCE.P1": "Created static websites with HTML layout, responsive CSS design, and web structure for various clients.",
-  "EXPERIENCE.FREELANCE.P2": "Also developed small web solutions focused on performance and accessibility.",
-
-  "EXPERIENCE.TICKET.NAME": "Ticket Cuartetero",
-  "EXPERIENCE.TICKET.ROLE": "Fullstack Freelance Project",
-  "EXPERIENCE.TICKET.P1": "Complete development of a ticket selling and buying platform, including architecture, frontend, backend, and deployment.",
-  "EXPERIENCE.TICKET.P2": "Built the platform using NextJS + NestJS + Firebase, integrating services like MinIO (AWS S3), Puppeteer for PDF generation, and Cloudflare for domain management.",
-  "EXPERIENCE.TICKET.P3": "Deployed using Docker and Docker Compose on Ubuntu servers (Hostinger). Configured Nginx, SMTP, SSL certificates, and traffic redirection."
+  "EXPERIENCE": {
+    "TITLE": "Work Experience",
+    "ITEMS": {
+      "ENCODE": {
+        "NAME": "Encodelabs S.A.",
+        "ROLE": "Fullstack Developer",
+        "DATES": "2024 - Present",
+        "PARAGRAPHS": [
+          "Developed various web applications using Angular and Next, creating reusable components and optimizing application performance. Built responsive interfaces based on Figma designs and ensured cross-browser compatibility.",
+          "Built simple servers using Node.js and Express, implementing email delivery for different websites.",
+          "Also handled the setup of Docker and Docker Compose environments for both development and production."
+        ]
+      },
+      "KUNAN": {
+        "NAME": "Kunan S.A.",
+        "ROLE": "Fullstack Developer",
+        "DATES": "2023 - 2024",
+        "PARAGRAPHS": [
+          "Developed interactive dashboards for clinical reports, handling both design and full implementation.",
+          "Planned and presented the project architecture to stakeholders using technologies like Node.js, Google Connector (Apps Script), and Looker Studio."
+        ]
+      },
+      "FREELANCE": {
+        "NAME": "Freelance Projects",
+        "ROLE": "Web Developer",
+        "DATES": "2022 - Present",
+        "PARAGRAPHS": [
+          "Created static websites with HTML layout, responsive CSS design, and web structure for various clients.",
+          "Also developed small web solutions focused on performance and accessibility."
+        ]
+      }
+    }
+  },
+  "PROJECTS": {
+    "OWN": "Own projects",
+    "COLLAB": "Collaborative projects"
+  },
+  "CONTACT": {
+    "TITLE": "Contact me!",
+    "NAME": "Name",
+    "EMAIL": "Email",
+    "SUBJECT": "Subject",
+    "MESSAGE": "Message",
+    "PLACEHOLDER_NAME": "Your name",
+    "PLACEHOLDER_EMAIL": "Your email",
+    "PLACEHOLDER_SUBJECT": "Subject",
+    "PLACEHOLDER_MESSAGE": "Your message",
+    "BUTTON": "Send"
+  }
 }

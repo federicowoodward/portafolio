@@ -1,2 +1,61 @@
-<!-- aca proyectos en tarjetitas -->
-    <h1 class="">Proyectos</h1>
+<div class="">
+  <h2>{{ "PROJECTS.OWN" | translate }}</h2>
+
+  <div class="grid grid-nogutter md:grid-cols-2 gap-4 pt-4 max-width">
+    <app-github-card
+      class="col-12 md:col"
+      fullName="federicowoodward/random-number-api-web"
+      description="Random number generator with nest and next js."
+      avatarUrl="https://avatars.githubusercontent.com/u/83924684?v=4&size=64"
+      htmlUrl="https://github.com/federicowoodward/random-number-api-web"
+    ></app-github-card>
+
+    <app-github-card
+      class="col-12 md:col"
+      fullName="federicowoodward/angular-title-animation"
+      description="Animación para títulos en angular 19 utilizando GSAP."
+      avatarUrl="https://avatars.githubusercontent.com/u/83924684?v=4&size=64"
+      htmlUrl="https://github.com/federicowoodward/angular-title-animation"
+    ></app-github-card>
+
+    <app-github-card
+      class="col-12 md:col"
+      fullName="federicowoodward/prueba-tecnica-net"
+      description="Prueba técnica básica de .net y docker compose (mysql db)"
+      avatarUrl="https://avatars.githubusercontent.com/u/83924684?v=4&size=64"
+      htmlUrl="https://github.com/federicowoodward/prueba-tecnica-net"
+    ></app-github-card>
+
+    <app-github-card
+      class="col-12 md:col"
+      fullName="federicowoodward/backend-1"
+      description="Repositorio para el curso de Backend en coderhouse"
+      avatarUrl="https://avatars.githubusercontent.com/u/83924684?v=4&size=64"
+      htmlUrl="https://github.com/federicowoodward/backend-1"
+    ></app-github-card>
+  </div>
+
+  <div class="py-4">
+    <p-divider></p-divider>
+  </div>
+
+  <h2 class="pt-4">{{ "PROJECTS.COLLAB" | translate }}</h2>
+
+  <div
+    class="flex flex-column md:flex-row align-items-center gap-4 py-4 max-width"
+  >
+    <app-iframe-card title="Tokelab" url="https://tokelab.io"></app-iframe-card>
+
+    <app-iframe-card
+      title="Propertize"
+      url="https://propertize.io"
+    ></app-iframe-card>
+  </div>
+
+  <div class="flex justify-content-center md:justify-content-start">
+    <app-iframe-card
+      title="ClockIt"
+      url="https://clockit.com.ar"
+    ></app-iframe-card>
+  </div>
+</div>

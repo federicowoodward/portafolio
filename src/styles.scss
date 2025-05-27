@@ -23,6 +23,11 @@ body {
 
 html {
   overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.max-width {
+  max-width: 740px;
 }
 
 h1,

@@ -44,45 +44,32 @@
   </div>
 
   <div
-    class="flex flex-column sm:flex-row gap-5 align-items-center justify-content-center py-2 my-2"
+    class="flex flex-row custom-gap align-items-center justify-content-center py-2 my-2"
   >
-    <div class="flex gap-5">
-      <h3
-        [routerLink]="['/about']"
-        class="cursor-pointer"
-        routerLinkActive="active"
-      >
-        {{ "NAV.ABOUT" | translate }}
-      </h3>
-      <h3 [routerLink]="['/experience']" routerLinkActive="active">
-        {{ "NAV.EXPERIENCE" | translate }}
-      </h3>
-    </div>
-
-    <div class="flex gap-0">
-      <h3
-        [routerLink]="['/education']"
-        class="cursor-pointer"
-        routerLinkActive="active"
-      >
-        {{ "NAV.EDUCATION" | translate }}
-      </h3>
-      <h3
-        [routerLink]="['/skills']"
-        class="cursor-pointer"
-        routerLinkActive="active"
-      >
-        {{ "NAV.SKILLS" | translate }}
-      </h3>
-      <h3
-        [routerLink]="['/projects']"
-        class="cursor-pointer"
-        routerLinkActive="active"
-      >
-        {{ "NAV.PROJECTS" | translate }}
-      </h3>
-    </div>
+    <h3
+      [routerLink]="['/about']"
+      class="cursor-pointer"
+      routerLinkActive="active"
+    >
+      {{ "NAV.ABOUT" | translate }}
+    </h3>
+    <h3 [routerLink]="['/experience']" routerLinkActive="active">
+      {{ "NAV.EXPERIENCE" | translate }}
+    </h3>
+    <h3
+      [routerLink]="['/education']"
+      class="cursor-pointer"
+      routerLinkActive="active"
+    >
+      {{ "NAV.EDUCATION" | translate }}
+    </h3>
+    <h3
+      [routerLink]="['/projects']"
+      class="cursor-pointer"
+      routerLinkActive="active"
+    >
+      {{ "NAV.PROJECTS" | translate }}
+    </h3>
   </div>
-
   <p-divider />
 </header>

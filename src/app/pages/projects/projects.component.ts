@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
+import { GithubCardComponent } from '../../components/github-card/github-card.component';
+import { IframeCardComponent } from '../../shared/components/iframe-card/iframe-card.component';
+import { TranslateModule } from '@ngx-translate/core';
+import { DividerModule } from 'primeng/divider';
 
 @Component({
   selector: 'app-projects',
-  imports: [],
+  imports: [GithubCardComponent, IframeCardComponent, TranslateModule, DividerModule],
   templateUrl: './projects.component.html',
-  styleUrl: './projects.component.scss'
+  styleUrl: './projects.component.scss',
 })
-export class ProjectsComponent {
-
-}
+export class ProjectsComponent {}

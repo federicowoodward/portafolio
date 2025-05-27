@@ -16,26 +16,89 @@
     "P2": "También tengo experiencia trabajando con bases de datos, desarrollo de APIs y construcción de aplicaciones orientadas a la visualización interactiva de datos.",
     "P3": "Me apasiona optimizar experiencias digitales, automatizar procesos, y trabajar con herramientas modernas para entregar productos eficientes, escalables y con un diseño cuidado. Domino el ecosistema Git, y tengo conocimientos básicos en despliegue de infraestructura."
   },
-  "EXPERIENCE.TITLE": "Experiencia laboral:",
-  "EXPERIENCE.ENCODE.NAME": "Encodelabs S.A.",
-  "EXPERIENCE.ENCODE.ROLE": "Desarrollador Fullstack",
-  "EXPERIENCE.ENCODE.P1": "Desarrollé diversas aplicaciones web utilizando Angular y Next, creando componentes reutilizables y optimizando el rendimiento de las aplicaciones. Construí interfaces responsivas siguiendo diseños de Figma y asegurando compatibilidad entre navegadores.",
-  "EXPERIENCE.ENCODE.P2": "Construí servidores simples utilizando Node.js y Express, implementando envío de correos para diferentes webs.",
-  "EXPERIENCE.ENCODE.P3": "También me encargué de armar diferentes configuraciones de Docker y Docker Compose para crear entornos de desarrollo y producción.",
-
-  "EXPERIENCE.KUNAN.NAME": "Kunan S.A.",
-  "EXPERIENCE.KUNAN.ROLE": "Desarrollador Fullstack",
-  "EXPERIENCE.KUNAN.P1": "Desarrollé dashboards interactivos para reportes clínicos, encargándome tanto del diseño como de la implementación completa.",
-  "EXPERIENCE.KUNAN.P2": "Planifiqué y presenté la arquitectura del proyecto a mis superiores utilizando tecnologías como Node.js, Google Connector (Apps Script) y Looker Studio.",
-
-  "EXPERIENCE.FREELANCE.NAME": "Proyectos Freelance",
-  "EXPERIENCE.FREELANCE.ROLE": "Desarrollador Web",
-  "EXPERIENCE.FREELANCE.P1": "Realicé maquetación HTML, diseño CSS responsive y estructura de sitios web estáticos para distintos clientes.",
-  "EXPERIENCE.FREELANCE.P2": "También desarrollé pequeñas soluciones web con enfoque en rendimiento y accesibilidad.",
-
-  "EXPERIENCE.TICKET.NAME": "Ticket Cuartetero",
-  "EXPERIENCE.TICKET.ROLE": "Proyecto Fullstack Freelance",
-  "EXPERIENCE.TICKET.P1": "Desarrollo completo de una plataforma de compra y venta de entradas, incluyendo arquitectura, frontend, backend y despliegue.",
-  "EXPERIENCE.TICKET.P2": "Desarrollé la plataforma con NextJS + NestJS + Firebase, integrando servicios como MinIO (AWS S3), Puppeteer para generación de PDFs y Cloudflare para gestión de dominios.",
-  "EXPERIENCE.TICKET.P3": "Implementé despliegue con Docker y Docker Compose sobre servidores Ubuntu en Hostinger. Configuré Nginx, SMTP, certificados SSL, y redirección de tráfico."
+  "EXPERIENCE": {
+    "TITLE": "Experiencia laboral",
+    "ITEMS": {
+      "ENCODE": {
+        "NAME": "Encodelabs S.A.",
+        "ROLE": "Desarrollador Fullstack",
+        "DATES": "2024 - Actualidad",
+        "PARAGRAPHS": [
+          "Desarrollé diversas aplicaciones web utilizando Angular y Next, creando componentes reutilizables y optimizando el rendimiento de las aplicaciones. Construí interfaces responsivas siguiendo diseños de Figma y asegurando compatibilidad entre navegadores.",
+          "Construí servidores simples utilizando Node.js y Express, implementando envío de correos para diferentes webs.",
+          "También me encargué de armar diferentes configuraciones de Docker y Docker Compose para crear entornos de desarrollo y producción."
+        ],
+        "ICONS": ["angular", "node", "css", "git", "docker", "python", "nextjs"]
+      },
+      "KUNAN": {
+        "NAME": "Kunan S.A.",
+        "ROLE": "Desarrollador Fullstack",
+        "DATES": "2023 - 2024",
+        "PARAGRAPHS": [
+          "Desarrollé dashboards interactivos para reportes clínicos, encargándome tanto del diseño como de la implementación completa.",
+          "Planifiqué y presenté la arquitectura del proyecto a mis superiores utilizando tecnologías como Node.js, Google Connector (Apps Script) y Looker Studio."
+        ],
+        "ICONS": ["node", "git", "python", "mysql", "aws", "looker", "gcloud"]
+      },
+      "FREELANCE": {
+        "NAME": "Proyectos Freelance",
+        "ROLE": "Desarrollador Web",
+        "DATES": "2022 - Actualidad",
+        "PARAGRAPHS": [
+          "Realicé maquetación HTML, diseño CSS responsive y estructura de sitios web estáticos para distintos clientes.",
+          "También desarrollé pequeñas soluciones web con enfoque en rendimiento y accesibilidad."
+        ],
+        "ICONS": ["css", "git", "html"]
+      }
+    }
+  },
+  "EDUCATION": {
+    "TITLE": "Educación",
+    "ITEMS": {
+      "QUALITY": {
+        "NAME": "Quality ISAD",
+        "ROLE": "Tecnicatura en Desarollo de Software",
+        "DATES": "2023 - 2025",
+        "ICONS": [
+          "angular",
+          "node",
+          "css",
+          "git",
+          "docker",
+          "mysql",
+          "python",
+          "csharp"
+        ]
+      },
+      "CODER": {
+        "NAME": "CoderHouse",
+        "ROLE": "Bootcamp Fullstack",
+        "DATES": "2022 - 2024",
+        "ICONS": ["node", "react", "git", "css", "mongo", "html"],
+        "HAS_CERTIFICATE": "true"
+      },
+      "PIL": {
+        "NAME": "PIL 2023 | ISPC",
+        "ROLE": "Python y bases de datos",
+        "DATES": "2023",
+        "ICONS": ["python", "mysql", "mongo"]
+      }
+    }
+  },
+  "PROJECTS": {
+    "OWN": "Proyectos propios",
+    "COLLAB": "Proyectos que co-desarrollé"
+  },
+  "CONTACT": {
+    "TITLE": "¡Contactame!",
+    "NAME": "Nombre",
+    "EMAIL": "Email",
+    "SUBJECT": "Asunto",
+    "MESSAGE": "Mensaje",
+    "PLACEHOLDER_NAME": "Tu nombre",
+    "PLACEHOLDER_EMAIL": "Tu email",
+    "PLACEHOLDER_SUBJECT": "Asunto",
+    "PLACEHOLDER_MESSAGE": "Tu mensaje",
+    "BUTTON": "Enviar"
+  }
 }

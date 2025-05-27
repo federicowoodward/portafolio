@@ -1,10 +1,14 @@
 <div class="background-wrapper">
   <app-header></app-header>
+
   <div
+    class="router-container"
     [@fadeAnimation]="prepareRoute(outlet)"
-    style="position: relative; min-height: 50vh"
+    (@fadeAnimation.start)="onStart()"
+    (@fadeAnimation.done)="onDone()"
   >
     <router-outlet #outlet="outlet"></router-outlet>
   </div>
-  <app-footer></app-footer>
+
+  <app-footer [hidden]="!showFooter"></app-footer>
 </div>
