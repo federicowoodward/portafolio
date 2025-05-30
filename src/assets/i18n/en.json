@@ -27,7 +27,8 @@
           "Developed various web applications using Angular and Next, creating reusable components and optimizing application performance. Built responsive interfaces based on Figma designs and ensured cross-browser compatibility.",
           "Built simple servers using Node.js and Express, implementing email delivery for different websites.",
           "Also handled the setup of Docker and Docker Compose environments for both development and production."
-        ]
+        ],
+        "ICONS": ["angular", "node", "css", "git", "docker", "python", "nextjs"]
       },
       "KUNAN": {
         "NAME": "Kunan S.A.",
@@ -36,7 +37,8 @@
         "PARAGRAPHS": [
           "Developed interactive dashboards for clinical reports, handling both design and full implementation.",
           "Planned and presented the project architecture to stakeholders using technologies like Node.js, Google Connector (Apps Script), and Looker Studio."
-        ]
+        ],
+        "ICONS": ["node", "git", "python", "mysql", "aws", "looker", "gcloud"]
       },
       "FREELANCE": {
         "NAME": "Freelance Projects",
@@ -45,7 +47,8 @@
         "PARAGRAPHS": [
           "Created static websites with HTML layout, responsive CSS design, and web structure for various clients.",
           "Also developed small web solutions focused on performance and accessibility."
-        ]
+        ],
+        "ICONS": ["css", "git", "html"]
       }
     }
   },
@@ -59,10 +62,26 @@
     "EMAIL": "Email",
     "SUBJECT": "Subject",
     "MESSAGE": "Message",
+    "BUTTON": "Send",
     "PLACEHOLDER_NAME": "Your name",
     "PLACEHOLDER_EMAIL": "Your email",
     "PLACEHOLDER_SUBJECT": "Subject",
     "PLACEHOLDER_MESSAGE": "Your message",
-    "BUTTON": "Send"
+    "ERRORS": {
+      "NAME": "This field is required.",
+      "EMAIL_REQUIRED": "This field is required.",
+      "EMAIL_INVALID": "Invalid email address.",
+      "SUBJECT": "This field is required.",
+      "MESSAGE_REQUIRED": "This field is required.",
+      "MESSAGE_MINLENGTH": "Must be at least {{length}} characters.",
+      "FORM_INVALID": "Please check the form before submitting."
+    },
+    "SUCCESS": "Message sent successfully!",
+    "FAILURE": "Failed to send the message. Please try again later.",
+    "EMAIL_FALLBACK": "Message couldn’t be sent right now. You can try again later or email me directly at:"
+  },
+  "FOOTER": {
+    "GREETING": "Thank you for visiting!",
+    "TECHS": "Some technologies I know / master:"
   }
 }

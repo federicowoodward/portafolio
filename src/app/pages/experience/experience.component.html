@@ -1,10 +1,16 @@
 <!-- Loader -->
-<div *ngIf="loading" class="flex justify-content-center align-items-center py-6">
+<div
+  *ngIf="loading"
+  class="flex justify-content-center align-items-center py-6"
+>
   <p>Cargando...</p>
 </div>
 
 <!-- Experiencia -->
-<div class="px-4 flex flex-column max-width" *ngIf="!loading && experienceKeys.length">
+<div
+  class="px-4 flex flex-column max-width"
+  *ngIf="!loading && experienceKeys.length"
+>
   <h2>{{ "EXPERIENCE.TITLE" | translate }}</h2>
   <div class="flex flex-column gap-4">
     <div *ngFor="let key of experienceKeys">
@@ -20,12 +26,12 @@
 
       <p>{{ experienceItems[key]?.ROLE }}</p>
 
-      <ng-container *ngFor="let p of (experienceItems[key]?.PARAGRAPHS || [])">
+      <ng-container *ngFor="let p of experienceItems[key]?.PARAGRAPHS || []">
         <p class="pt-3">{{ p }}</p>
       </ng-container>
 
       <div class="flex gap-2 flex-wrap py-2 mt-3">
-        <ng-container *ngFor="let icon of (experienceItems[key]?.ICONS || [])">
+        <ng-container *ngFor="let icon of experienceItems[key]?.ICONS || []">
           <app-tech-icon [name]="icon"></app-tech-icon>
         </ng-container>
       </div>

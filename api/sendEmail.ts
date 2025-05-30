@@ -15,9 +15,9 @@ module.exports = async function handler(req: any, res: any) {
 
   try {
     const data = await resend.emails.send({
-      from: 'woodfederico@ticketcuartetero.com.ar',
+      from: 'portafolio@fedewoodward.com',
       to: 'woodfederico@gmail.com',
-      subject: `[Contacto Web] ${subject}`,
+      subject: `${subject}`,
       html: `
         <p><strong>De:</strong> ${from}</p>
         <p><strong>Mensaje:</strong></p>

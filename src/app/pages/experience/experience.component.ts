@@ -16,7 +16,7 @@ export class ExperienceComponent {
   loading = true;
 
   constructor(private translate: TranslateService) {
-    this.translate.get('EXPERIENCE.ITEMS').subscribe((items) => {
+    this.translate.stream('EXPERIENCE.ITEMS').subscribe((items) => {
       this.experienceItems = items || {};
       this.experienceKeys = Object.keys(this.experienceItems);
       this.loading = false;

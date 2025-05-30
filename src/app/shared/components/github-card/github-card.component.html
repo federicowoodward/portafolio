@@ -1,4 +1,4 @@
-<p-card class="">
+<p-card class="custom-card">
   <ng-template pTemplate="header">
     <div class="flex items-center gap-3 p-3">
       <img
@@ -17,8 +17,13 @@
   <p *ngIf="description">{{ description }}</p>
 
   <div class="flex justify-content-between mt-2">
-    <a [href]="htmlUrl" target="_blank" class="list-none underline"
-      >Ver en GitHub</a
+    <a
+      [href]="htmlUrl"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="p-button font-bold no-underline"
     >
+      Ver en GitHub
+    </a>
   </div>
 </p-card>

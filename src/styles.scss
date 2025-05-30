@@ -13,12 +13,45 @@
   --color-light: #f2efe9;
   --color-beige: #bfbbb4;
   --color-bg: #00010d;
+  --p-card-background: var(--color-dark);
+  --p-card-border-color: var(--color-light);
+  --p-card-text-color: var(--color-light);
+  --p-inputtext-placeholder-color: var(--color-light);
+  --p-inputtext-invalid-placeholder-color: red;
+  --p-textarea-placeholder-color: var(--color-light);
+  --p-textarea-invalid-placeholder-color: red;
+  --p-chip-background: var(--color-dark);
+  --p-button-primary-color: var(--color-light);
+  --p-button-primary-background: var(--color-dark);
+  --p-button-primary-border-color: var(--color-light);
+  --p-card-color: var(--color-light);
 }
 
 body {
   background-color: var(--color-bg);
   padding: 0 1rem;
   overflow-x: hidden;
+}
+
+.bg-custom {
+  color: var(--color-light) !important;
+  border-radius: 1rem !important;
+
+  input,
+  textarea {
+    background-color: var(--color-dark) !important;
+    border: 1px solid var(--color-light) !important;
+    color: var(--color-light) !important;
+
+    &.ng-invalid.ng-touched {
+      border-color: red !important;
+      box-shadow: 0 0 0 1px red;
+    }
+  }
+
+  .p-error {
+    color: red !important;
+  }
 }
 
 html {

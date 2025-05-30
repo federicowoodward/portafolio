@@ -1,72 +1,107 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import {
+  FormBuilder,
+  Validators,
+  ReactiveFormsModule,
+  FormGroup,
+} from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { TranslateModule } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { ToastService } from '../../../core/toast.service';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { TextareaModule } from 'primeng/textarea';
-import { MessagesModule } from 'primeng/messages';
-import { TranslateModule } from '@ngx-translate/core';
+import { ToastModule } from 'primeng/toast';
 
 @Component({
   selector: 'app-contact',
-  templateUrl: './contact.component.html',
-  styleUrl: './contact.component.scss',
   standalone: true,
   imports: [
     CommonModule,
-    FormsModule,
+    ReactiveFormsModule,
     InputTextModule,
     ButtonModule,
     CardModule,
     TextareaModule,
-    MessagesModule,
     TranslateModule,
+    ToastModule,
   ],
+  templateUrl: './contact.component.html',
+  styleUrl: './contact.component.scss',
 })
-export class ContactComponent {
-  from = '';
-  subject = '';
-  message = '';
-  name = '';
-  success = false;
-  error = '';
-  msgs: any[] = [];
+export class ContactComponent implements OnInit {
+  constructor(
+    private fb: FormBuilder,
+    private http: HttpClient,
+    private toast: ToastService,
+  ) {}
 
-  constructor(private http: HttpClient) {}
+  form!: FormGroup;
+  loading = false;
+  sendFailed = false;
+
+  ngOnInit() {
+    this.form = this.fb.group({
+      name: ['', [Validators.required]],
+      from: ['', [Validators.required, Validators.email]],
+      subject: ['', [Validators.required]],
+      message: ['', [Validators.required, Validators.minLength(50)]],
+    });
+
+    this.form.statusChanges.subscribe(() => {
+      if (this.form.valid) this.toast.clear();
+    });
+  }
+
+  get f() {
+    return this.form.controls;
+  }
 
   onSubmit() {
-    this.success = false;
-    this.error = '';
-    this.msgs = [];
+    if (this.form.invalid) {
+      this.toast.error('Error', 'Revisá los campos del formulario');
+      this.form.markAllAsTouched();
+      return;
+    }
+
+    this.loading = true;
+    this.sendFailed = false; // reset error al enviar
+
+    const { name, from, subject, message } = this.form.value;
 
     this.http
       .post('/api/sendEmail', {
-        from: this.from,
-        subject: this.subject,
-        message: `${this.name}\n\n${this.message}`,
+        from,
+        subject,
+        message: `${name}\n\n${message}`,
       })
       .subscribe({
         next: () => {
-          this.success = true;
-          this.msgs = [
-            {
-              severity: 'success',
-              detail: '¡Mensaje enviado correctamente!',
-            },
-          ];
+          this.toast.success('Éxito', '¡Mensaje enviado correctamente!');
+          this.form.reset();
+          this.sendFailed = false;
         },
         error: (err) => {
           console.error('Falló el envío:', err);
-          this.error =
-            'No se pudo enviar el mensaje. Podés escribirme directamente a woodfederico@gmail.com.';
-          this.msgs = [
-            {
-              severity: 'error',
-              detail: this.error,
-            },
-          ];
+          this.sendFailed = true;
+          this.loading = false;
+
+          if (err.status === 429) {
+            this.toast.error(
+              'Demasiados intentos',
+              'Esperá un momento antes de volver a enviar.',
+            );
+
+            this.form.disable();
+            setTimeout(() => this.form.enable(), 60_000); // 60 segundos
+          } else {
+            this.toast.error('Error', 'No se pudo enviar el mensaje.');
+          }
+        },
+        complete: () => {
+          this.loading = false;
         },
       });
   }

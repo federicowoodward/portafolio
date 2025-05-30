@@ -5,6 +5,7 @@ import {
   trigger,
   query,
   group,
+  state,
 } from '@angular/animations';
 
 export const fadeAnimation = trigger('fadeAnimation', [
@@ -19,7 +20,7 @@ export const fadeAnimation = trigger('fadeAnimation', [
           transform: 'translateY(10px)',
         }),
       ],
-      { optional: true }
+      { optional: true },
     ),
     group([
       query(
@@ -27,21 +28,22 @@ export const fadeAnimation = trigger('fadeAnimation', [
         [
           animate(
             '300ms ease-out',
-            style({ opacity: 0, transform: 'translateY(-10px)' })
+            style({ opacity: 0, transform: 'translateY(-10px)' }),
           ),
         ],
-        { optional: true }
+        { optional: true },
       ),
       query(
         ':enter',
         [
           animate(
             '300ms 100ms ease-out',
-            style({ opacity: 1, transform: 'translateY(0)' })
+            style({ opacity: 1, transform: 'translateY(0)' }),
           ),
         ],
-        { optional: true }
+        { optional: true },
       ),
     ]),
   ]),
 ]);
+

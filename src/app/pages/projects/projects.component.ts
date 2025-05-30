@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { GithubCardComponent } from '../../components/github-card/github-card.component';
+import { GithubCardComponent } from '../../shared/components/github-card/github-card.component';
 import { IframeCardComponent } from '../../shared/components/iframe-card/iframe-card.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { DividerModule } from 'primeng/divider';

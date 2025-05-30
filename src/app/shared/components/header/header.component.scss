@@ -1,11 +1,12 @@
 .social-icons i {
-  background-color: #27272a;
+  background-color: var(--color-dark);
   border-radius: 50%;
   padding: 0.5rem;
 }
 
 .shadow-custom {
-  box-shadow: 5px 3px 5px rgba(255, 255, 255, 0.06),
+  box-shadow:
+    5px 3px 5px rgba(255, 255, 255, 0.06),
     10px 7px 9px rgba(255, 255, 255, 0.12),
     0px 20px 25px -8px rgba(255, 255, 255, 0.18);
 }
@@ -21,10 +22,6 @@ h3.active {
   transform: scale(1.05);
   font-weight: bold;
   cursor: pointer;
-}
-
-.bg-custom {
-  background-color: #27272a !important;
 }
 
 .custom-gap {
@@ -97,4 +94,40 @@ h3.active {
   .flip-card-back {
     transform: rotateY(180deg);
   }
+}
+
+.social-icons a {
+  all: unset; /* limpia todos los estilos por defecto */
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.social-icons a:hover i {
+  transform: scale(1.1);
+  transition: transform 0.2s ease;
+}
+
+@keyframes breathe {
+  0% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.04);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+}
+
+.breathing {
+  animation: breathe 3s ease-in-out infinite;
+  transition: transform 0.2s ease;
+}
+
+.breathing:hover {
+  animation-play-state: paused;
 }

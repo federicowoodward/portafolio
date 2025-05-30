@@ -92,13 +92,29 @@
   "CONTACT": {
     "TITLE": "¡Contactame!",
     "NAME": "Nombre",
-    "EMAIL": "Email",
+    "EMAIL": "Correo electrónico",
     "SUBJECT": "Asunto",
     "MESSAGE": "Mensaje",
+    "BUTTON": "Enviar mensaje",
     "PLACEHOLDER_NAME": "Tu nombre",
-    "PLACEHOLDER_EMAIL": "Tu email",
-    "PLACEHOLDER_SUBJECT": "Asunto",
-    "PLACEHOLDER_MESSAGE": "Tu mensaje",
-    "BUTTON": "Enviar"
+    "PLACEHOLDER_EMAIL": "tu@email.com",
+    "PLACEHOLDER_SUBJECT": "Motivo del mensaje",
+    "PLACEHOLDER_MESSAGE": "Cuentame más...",
+    "ERRORS": {
+      "NAME": "Este campo es obligatorio.",
+      "EMAIL_REQUIRED": "Este campo es obligatorio.",
+      "EMAIL_INVALID": "El correo no es válido.",
+      "SUBJECT": "Este campo es obligatorio.",
+      "MESSAGE_REQUIRED": "Este campo es obligatorio.",
+      "MESSAGE_MINLENGTH": "Debe tener al menos {{length}} caracteres.",
+      "FORM_INVALID": "Revisá los campos del formulario antes de enviar."
+    },
+    "SUCCESS": "¡Mensaje enviado correctamente!",
+    "FAILURE": "No se pudo enviar el mensaje. Intentalo más tarde.",
+    "EMAIL_FALLBACK": "No se pudo enviar el mensaje en este momento, puedes escribirme mas tarde o directamente a:"
+  },
+  "FOOTER": {
+    "GREETING": "Gracias por visitar!",
+    "TECHS": "Algunas tecnologías que conozco / domino:"
   }
 }
