@@ -57,7 +57,7 @@
     "COLLAB": "Collaborative projects"
   },
   "CONTACT": {
-    "TITLE": "Contact me!",
+    "TITLE": "Contact",
     "NAME": "Name",
     "EMAIL": "Email",
     "SUBJECT": "Subject",
@@ -81,7 +81,7 @@
     "EMAIL_FALLBACK": "Message couldn’t be sent right now. You can try again later or email me directly at:"
   },
   "FOOTER": {
-    "GREETING": "Thank you for visiting!",
+    "GREETING": "Thank you for visiting !",
     "TECHS": "Some technologies I know / master:"
   }
 }

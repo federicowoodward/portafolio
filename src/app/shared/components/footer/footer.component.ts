@@ -1,12 +1,11 @@
 import { Component, AfterViewInit } from '@angular/core';
 import { gsap } from 'gsap';
-import { AllTechIconsComponent } from '../tech-icons/all-tech-icons';
 import { ContactComponent } from '../contact/contact.component';
 import { DividerModule } from 'primeng/divider';
 import { TranslateModule } from '@ngx-translate/core';
 @Component({
   selector: 'app-footer',
-  imports: [AllTechIconsComponent, ContactComponent, DividerModule, TranslateModule],
+  imports: [ ContactComponent, DividerModule, TranslateModule],
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.scss',
 })

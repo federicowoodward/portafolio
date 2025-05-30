@@ -47,7 +47,7 @@ export class ContactComponent implements OnInit {
       name: ['', [Validators.required]],
       from: ['', [Validators.required, Validators.email]],
       subject: ['', [Validators.required]],
-      message: ['', [Validators.required, Validators.minLength(50)]],
+      message: ['', [Validators.required, Validators.minLength(25)]],
     });
 
     this.form.statusChanges.subscribe(() => {

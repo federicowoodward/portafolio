@@ -90,7 +90,7 @@
     "COLLAB": "Proyectos que co-desarrollé"
   },
   "CONTACT": {
-    "TITLE": "¡Contactame!",
+    "TITLE": "Contacto",
     "NAME": "Nombre",
     "EMAIL": "Correo electrónico",
     "SUBJECT": "Asunto",
@@ -114,7 +114,7 @@
     "EMAIL_FALLBACK": "No se pudo enviar el mensaje en este momento, puedes escribirme mas tarde o directamente a:"
   },
   "FOOTER": {
-    "GREETING": "Gracias por visitar!",
+    "GREETING": "Gracias por visitar !",
     "TECHS": "Algunas tecnologías que conozco / domino:"
   }
 }
