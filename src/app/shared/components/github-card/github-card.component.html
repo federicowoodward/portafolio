@@ -7,23 +7,25 @@
         width="50"
         height="50"
         style="border-radius: 50%"
-      />
-      <div>
-        <h3 class="m-0">{{ fullName }}</h3>
+        />
+        <div>
+          <h3 class="m-0">{{ fullName }}</h3>
+        </div>
       </div>
+    </ng-template>
+
+    @if (description) {
+      <p>{{ description }}</p>
+    }
+
+    <div class="flex justify-content-between mt-2">
+      <a
+        [href]="htmlUrl"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="p-button font-bold no-underline"
+        >
+        Ver en GitHub
+      </a>
     </div>
-  </ng-template>
-
-  <p *ngIf="description">{{ description }}</p>
-
-  <div class="flex justify-content-between mt-2">
-    <a
-      [href]="htmlUrl"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="p-button font-bold no-underline"
-    >
-      Ver en GitHub
-    </a>
-  </div>
-</p-card>
+  </p-card>

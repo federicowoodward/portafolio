@@ -1,7 +1,7 @@
 <p-card
   [header]="'CONTACT.TITLE' | translate"
   styleClass="w-full mx-auto my-4 bg-custom p-2"
->
+  >
   <form [formGroup]="form" (ngSubmit)="onSubmit()" class="p-fluid">
     <div class="flex md:gap-4 flex-column md:flex-row w-full pt-3">
       <div class="field flex flex-column w-full">
@@ -13,94 +13,102 @@
           formControlName="name"
           class="w-full"
           [placeholder]="'CONTACT.PLACEHOLDER_NAME' | translate"
-        />
-        <small class="p-error" *ngIf="f['name'].touched && f['name'].invalid">
-          {{ "CONTACT.ERRORS.NAME" | translate }}
-        </small>
-      </div>
+          />
+          @if (f['name'].touched && f['name'].invalid) {
+            <small class="p-error">
+              {{ "CONTACT.ERRORS.NAME" | translate }}
+            </small>
+          }
+        </div>
 
-      <div class="field flex flex-column w-full">
-        <label for="from">{{ "CONTACT.EMAIL" | translate }}</label>
-        <input
-          id="from"
-          type="email"
-          pInputText
-          formControlName="from"
-          class="w-full"
-          [placeholder]="'CONTACT.PLACEHOLDER_EMAIL' | translate"
-        />
-        <small class="p-error" *ngIf="f['from'].touched && f['from'].invalid">
-          {{
-            f["from"].errors?.["required"]
-              ? ("CONTACT.ERRORS.EMAIL_REQUIRED" | translate)
-              : ("CONTACT.ERRORS.EMAIL_INVALID" | translate)
-          }}
-        </small>
-      </div>
-    </div>
+        <div class="field flex flex-column w-full">
+          <label for="from">{{ "CONTACT.EMAIL" | translate }}</label>
+          <input
+            id="from"
+            type="email"
+            pInputText
+            formControlName="from"
+            class="w-full"
+            [placeholder]="'CONTACT.PLACEHOLDER_EMAIL' | translate"
+            />
+            @if (f['from'].touched && f['from'].invalid) {
+              <small class="p-error">
+                {{
+                f["from"].errors?.["required"]
+                ? ("CONTACT.ERRORS.EMAIL_REQUIRED" | translate)
+                : ("CONTACT.ERRORS.EMAIL_INVALID" | translate)
+                }}
+              </small>
+            }
+          </div>
+        </div>
 
-    <div class="field flex flex-column w-full">
-      <label for="subject">{{ "CONTACT.SUBJECT" | translate }}</label>
-      <input
-        id="subject"
-        type="text"
-        pInputText
-        formControlName="subject"
-        class="w-full"
-        [placeholder]="'CONTACT.PLACEHOLDER_SUBJECT' | translate"
-      />
-      <small
-        class="p-error"
-        *ngIf="f['subject'].touched && f['subject'].invalid"
-      >
-        {{ "CONTACT.ERRORS.SUBJECT" | translate }}
-      </small>
-    </div>
+        <div class="field flex flex-column w-full">
+          <label for="subject">{{ "CONTACT.SUBJECT" | translate }}</label>
+          <input
+            id="subject"
+            type="text"
+            pInputText
+            formControlName="subject"
+            class="w-full"
+            [placeholder]="'CONTACT.PLACEHOLDER_SUBJECT' | translate"
+            />
+            @if (f['subject'].touched && f['subject'].invalid) {
+              <small
+                class="p-error"
+                >
+                {{ "CONTACT.ERRORS.SUBJECT" | translate }}
+              </small>
+            }
+          </div>
 
-    <div class="field flex flex-column w-full">
-      <label for="message">{{ "CONTACT.MESSAGE" | translate }}</label>
-      <textarea
-        id="message"
-        rows="5"
-        pInputTextarea
-        formControlName="message"
-        class="w-full"
-        [placeholder]="'CONTACT.PLACEHOLDER_MESSAGE' | translate"
-      ></textarea>
+          <div class="field flex flex-column w-full">
+            <label for="message">{{ "CONTACT.MESSAGE" | translate }}</label>
+            <textarea
+              id="message"
+              rows="5"
+              pInputTextarea
+              formControlName="message"
+              class="w-full"
+              [placeholder]="'CONTACT.PLACEHOLDER_MESSAGE' | translate"
+            ></textarea>
 
-      <small
-        class="p-error"
-        *ngIf="f['message'].touched && f['message'].invalid"
-      >
-        {{
-          f["message"].errors?.["required"]
-            ? ("CONTACT.ERRORS.MESSAGE_REQUIRED" | translate)
-            : ("CONTACT.ERRORS.MESSAGE_MINLENGTH"
-              | translate
+            @if (f['message'].touched && f['message'].invalid) {
+              <small
+                class="p-error"
+                >
+                {{
+                f["message"].errors?.["required"]
+                ? ("CONTACT.ERRORS.MESSAGE_REQUIRED" | translate)
+                : ("CONTACT.ERRORS.MESSAGE_MINLENGTH"
+                | translate
                 : {
-                    length: f["message"].errors?.["minlength"]?.requiredLength,
-                  })
-        }}
-      </small>
-    </div>
+                length: f["message"].errors?.["minlength"]?.requiredLength,
+                })
+                }}
+              </small>
+            }
+          </div>
 
-    <div class="flex justify-content-start gap-4 align-items-center">
-      <button
-        pButton
-        type="submit"
-        [label]="'CONTACT.BUTTON' | translate"
-        icon="pi pi-send"
-        [disabled]="form.invalid || loading"
-        [loading]="loading"
-      ></button>
-    </div>
-  </form>
+          <div class="flex justify-content-start gap-4 align-items-center">
+            <button
+              pButton
+              type="submit"
+              [label]="'CONTACT.BUTTON' | translate"
+              icon="pi pi-send"
+              [disabled]="form.invalid || loading"
+              [loading]="loading"
+            ></button>
+          </div>
+        </form>
 
-  <div *ngIf="sendFailed" class="text-center text-sm py-4 w-20rem mx-auto">
-    {{ "CONTACT.EMAIL_FALLBACK" | translate }}
-    <br />
-    <strong>woodfederico&#64;gmail.com</strong>
-  </div>
-</p-card>
+        @if (sendFailed) {
+          <div class="text-center text-sm py-4 w-20rem mx-auto">
+            {{ "CONTACT.EMAIL_FALLBACK" | translate }}
+            <br />
+            <strong>woodfederico&#64;gmail.com</strong>
+          </div>
+        }
+      </p-card>
 
-<p-toast position="top-right" />
+      <p-toast position="top-right" />

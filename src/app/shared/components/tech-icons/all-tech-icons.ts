@@ -5,14 +5,14 @@ import {
   AfterViewInit,
   ViewChild,
 } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { icons } from './icons';
 
 @Component({
   selector: 'app-all-tech-icons',
   standalone: true,
-  imports: [CommonModule],
-  template: `<div #container class="icons-grid px-4 md:px-8 gap-2"></div>`,
+  imports: [],
+  template: `<div #container class="icons-grid px-4 md:px-8 gap-2 max-width"></div>`,
   styles: [
     `
       .icons-grid {

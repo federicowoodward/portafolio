@@ -6,13 +6,13 @@ import {
   OnChanges,
   ViewChild,
 } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { icons } from './icons';
 
 @Component({
   selector: 'app-tech-icon',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   template: `<span #container class="tech-icon"></span>`,
   styles: [
     `

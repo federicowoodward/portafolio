@@ -1,11 +1,11 @@
 import { Component, Input } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { CardModule } from 'primeng/card';
 
 @Component({
   selector: 'app-github-card',
   standalone: true,
-  imports: [CommonModule, CardModule],
+  imports: [CardModule],
   templateUrl: './github-card.component.html',
 })
 export class GithubCardComponent {

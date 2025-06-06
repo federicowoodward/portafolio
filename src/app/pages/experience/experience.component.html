@@ -1,40 +1,41 @@
 <!-- Loader -->
-<div
-  *ngIf="loading"
-  class="flex justify-content-center align-items-center py-6"
->
-  <p>Cargando...</p>
-</div>
+@if (loading) {
+  <div
+    class="flex justify-content-center align-items-center py-6"
+    >
+    <p>Cargando...</p>
+  </div>
+}
 
 <!-- Experiencia -->
-<div
-  class="px-4 flex flex-column max-width"
-  *ngIf="!loading && experienceKeys.length"
->
-  <h2>{{ "EXPERIENCE.TITLE" | translate }}</h2>
-  <div class="flex flex-column gap-4">
-    <div *ngFor="let key of experienceKeys">
-      <div class="flex justify-content-between py-3">
-        <div class="flex gap-2 align-items-center">
-          <p class="pi pi-briefcase pr-1"></p>
-          <h4>{{ experienceItems[key]?.NAME }}</h4>
+@if (!loading && experienceKeys.length) {
+  <div
+    class="px-4 flex flex-column max-width"
+    >
+    <h2>{{ "EXPERIENCE.TITLE" | translate }}</h2>
+    <div class="flex flex-column gap-4">
+      @for (key of experienceKeys; track key) {
+        <div>
+          <div class="flex justify-content-between py-3">
+            <div class="flex gap-2 align-items-center">
+              <p class="pi pi-briefcase pr-1"></p>
+              <h4>{{ experienceItems[key]?.NAME }}</h4>
+            </div>
+            <p class="text-gray-400">
+              {{ experienceItems[key]?.DATES }}
+            </p>
+          </div>
+          <p>{{ experienceItems[key]?.ROLE }}</p>
+          @for (p of experienceItems[key]?.PARAGRAPHS || []; track p) {
+            <p class="pt-3">{{ p }}</p>
+          }
+          <div class="flex gap-2 flex-wrap py-2 mt-3">
+            @for (icon of experienceItems[key]?.ICONS || []; track icon) {
+              <app-tech-icon [name]="icon"></app-tech-icon>
+            }
+          </div>
         </div>
-        <p class="text-gray-400">
-          {{ experienceItems[key]?.DATES }}
-        </p>
-      </div>
-
-      <p>{{ experienceItems[key]?.ROLE }}</p>
-
-      <ng-container *ngFor="let p of experienceItems[key]?.PARAGRAPHS || []">
-        <p class="pt-3">{{ p }}</p>
-      </ng-container>
-
-      <div class="flex gap-2 flex-wrap py-2 mt-3">
-        <ng-container *ngFor="let icon of experienceItems[key]?.ICONS || []">
-          <app-tech-icon [name]="icon"></app-tech-icon>
-        </ng-container>
-      </div>
+      }
     </div>
   </div>
-</div>
+}

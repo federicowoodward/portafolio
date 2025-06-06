@@ -4,14 +4,14 @@ import {
   TranslateService,
   LangChangeEvent,
 } from '@ngx-translate/core';
-import { CommonModule } from '@angular/common';
+
 import { TechIconComponent } from '../../shared/components/tech-icons/tech-icons';
 import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-education',
   standalone: true,
-  imports: [TranslateModule, CommonModule, TechIconComponent],
+  imports: [TranslateModule, TechIconComponent],
   templateUrl: './education.component.html',
   styleUrl: './education.component.scss',
 })

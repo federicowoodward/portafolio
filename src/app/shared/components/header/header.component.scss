@@ -18,10 +18,15 @@ h3 {
   cursor: pointer;
 }
 
+h3 {
+  color: var(--color-gray);
+}
+
 h3.active {
   transform: scale(1.05);
   font-weight: bold;
   cursor: pointer;
+  color: var(--color-white);
 }
 
 .custom-gap {
