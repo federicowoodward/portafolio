@@ -1,4 +1,4 @@
-<div class="px-4">
+<div class="px-4 max-width">
   <h2>{{ "ABOUT.TITLE" | translate }}</h2>
   <p>{{ "ABOUT.P1" | translate }}</p>
   <br />
@@ -6,7 +6,9 @@
   <br />
   <p>{{ "ABOUT.P3" | translate }}</p>
 
-  <p-divider></p-divider>
-  <h2 class="pt-4 pb-4 text-center">{{ "FOOTER.TECHS" | translate }}</h2>
-  <app-all-tech-icons></app-all-tech-icons>
+  <div class="flex flex-column align-content-center">
+    <p-divider></p-divider>
+    <h2 class="pt-4 pb-4 text-center">{{ "FOOTER.TECHS" | translate }}</h2>
+    <app-all-tech-icons></app-all-tech-icons>
+  </div>
 </div>
