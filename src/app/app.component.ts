@@ -19,7 +19,7 @@ import { MessageService } from 'primeng/api';
 })
 export class AppComponent implements AfterViewInit {
   constructor(private scrollService: ScrollService) {}
-  title = 'portafolio-angular';
+  title = 'Federico Woodward';
   showFooter = true;
 
   ngAfterViewInit(): void {}
