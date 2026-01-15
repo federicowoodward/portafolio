@@ -1,0 +1,74 @@
+import { Injectable, InjectionToken, Inject } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable, map } from 'rxjs';
+
+export type Lang = 'es' | 'en';
+
+export interface SanityPublicConfig {
+  projectId: string;
+  dataset: string;
+  apiVersion: string; 
+}
+
+interface SanityQueryResponse<T> {
+  ms: number;
+  query: string;
+  result: T;
+}
+
+export const SANITY_PUBLIC_CONFIG = new InjectionToken<SanityPublicConfig>(
+  'SANITY_PUBLIC_CONFIG',
+);
+
+@Injectable({ providedIn: 'root' })
+export class SanityPublicClient {
+  constructor(
+    private http: HttpClient,
+    @Inject(SANITY_PUBLIC_CONFIG) private cfg: SanityPublicConfig,
+  ) {}
+
+  /** Construye URL GET contra el Content Lake CDN (dataset público). */
+  private buildUrl(groq: string, params?: Record<string, unknown>): string {
+    const base = `https://${this.cfg.projectId}.apicdn.sanity.io/v${this.cfg.apiVersion}/data/query/${this.cfg.dataset}`;
+    const url = new URL(base);
+    url.searchParams.set('query', groq);
+    if (params && Object.keys(params).length) {
+      // Los params van serializados como JSON
+      url.searchParams.set('params', JSON.stringify(params));
+    }
+    return url.toString();
+  }
+
+  /** Query genérica. Escribís el GROQ en el componente. */
+  query<T>(groq: string, params?: Record<string, unknown>): Observable<T> {
+    return this.http
+      .get<SanityQueryResponse<T>>(this.buildUrl(groq, params))
+      .pipe(map((r) => r.result));
+  }
+
+  /** Helper: seleccionar valor localizado con fallback (ES/EN). */
+  i18n(field: string, lang: Lang) {
+    // usar dentro del GROQ: ${client.i18n('title', lang)}
+    return `coalesce(${field}["${lang}"], ${field}["es"], ${field}["en"])`;
+  }
+
+  /** Helper: transformar URL de imagen (w/h/fit/q + auto=format). */
+  img(
+    url?: string,
+    opts?: {
+      w?: number;
+      h?: number;
+      fit?: 'clip' | 'crop' | 'min' | 'max';
+      q?: number;
+    },
+  ) {
+    if (!url) return undefined;
+    const u = new URL(url);
+    if (opts?.w) u.searchParams.set('w', String(opts.w));
+    if (opts?.h) u.searchParams.set('h', String(opts.h));
+    if (opts?.fit) u.searchParams.set('fit', opts.fit);
+    u.searchParams.set('auto', 'format');
+    if (opts?.q) u.searchParams.set('q', String(opts.q));
+    return u.toString();
+  }
+}

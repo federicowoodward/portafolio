@@ -1,0 +1,127 @@
+{
+  "HEADER": {
+    "SUBTITLE": "Software developer",
+    "LOCATION": "Córdoba, Argentina"
+  },
+  "NAV": {
+    "ABOUT": "About me",
+    "EXPERIENCE": "Experience",
+    "EDUCATION": "Education",
+    "SKILLS": "Skills",
+    "PROJECTS": "Projects"
+  },
+  "ABOUT": {
+    "TITLE": "About me",
+    "P1": "Hi! I'm Federico Woodward, a Fullstack developer with a strong focus on Frontend development. I specialize in the main modern technologies of the web ecosystem and have solid knowledge of responsive design and complex animations.",
+    "P2": "I also have experience working with databases, API development, and building applications focused on interactive data visualization.",
+    "P3": "I'm passionate about optimizing digital experiences, automating processes, and working with modern tools to deliver efficient, scalable products with thoughtful design. I'm proficient with the Git ecosystem and have basic knowledge in infrastructure deployment."
+  },
+  "EXPERIENCE": {
+    "TITLE": "Work Experience",
+    "ITEMS": {
+      "ENCODE": {
+        "NAME": "Encodelabs S.A.",
+        "ROLE": "Fullstack Developer",
+        "DATES": "2024 - Present",
+        "PARAGRAPHS": [
+          "Developed various web applications using Angular and Next, creating reusable components and optimizing application performance. Built responsive interfaces based on Figma designs and ensured cross-browser compatibility.",
+          "Built simple servers using Node.js and Express, implementing email delivery for different websites.",
+          "Also handled the setup of Docker and Docker Compose environments for both development and production."
+        ],
+        "ICONS": ["angular", "node", "css", "git", "docker", "python", "nextjs"]
+      },
+      "KUNAN": {
+        "NAME": "Kunan S.A.",
+        "ROLE": "Fullstack Developer",
+        "DATES": "2023 - 2024",
+        "PARAGRAPHS": [
+          "Developed interactive dashboards for clinical reports, handling both design and full implementation.",
+          "Planned and presented the project architecture to stakeholders using technologies like Node.js, Google Connector (Apps Script), and Looker Studio."
+        ],
+        "ICONS": ["node", "git", "python", "mysql", "aws", "looker", "gcloud"]
+      },
+      "FREELANCE": {
+        "NAME": "Freelance Projects",
+        "ROLE": "Web Developer",
+        "DATES": "2022 - Present",
+        "PARAGRAPHS": [
+          "Created static websites with HTML layout, responsive CSS design, and web structure for various clients.",
+          "Also developed small web solutions focused on performance and accessibility."
+        ],
+        "ICONS": ["css", "git", "html"]
+      }
+    }
+  },
+  "EDUCATION": {
+    "TITLE": "Educación",
+    "ITEMS": {
+      "QUALITY": {
+        "NAME": "Quality ISAD",
+        "ROLE": "Software Development Technician Degree",
+        "DATES": "2023 - 2025",
+        "ICONS": [
+          "angular",
+          "node",
+          "css",
+          "git",
+          "docker",
+          "mysql",
+          "python",
+          "csharp"
+        ]
+      },
+      "ISO": {
+        "NAME": "ISO 27001/22",
+        "ROLE": "Certification ISO 27001/22",
+        "DATES": "2025"
+      },
+      "CODER": {
+        "NAME": "CoderHouse",
+        "ROLE": "Bootcamp Fullstack",
+        "DATES": "2022 - 2024",
+        "ICONS": ["node", "react", "git", "css", "mongo", "html"],
+        "HAS_CERTIFICATE": "true"
+      },
+      "PIL": {
+        "NAME": "PIL 2023 | ISPC",
+        "ROLE": "Python and databases",
+        "DATES": "2023",
+        "ICONS": ["python", "mysql", "mongo"]
+      }
+    }
+  },
+  "PROJECTS": {
+    "COLLAB": "Collaborative Professional Projects",
+    "COLLAB_DESC": "These are professional projects where I collaborated as a developer, contributing both to design and programming in a team.",
+    "OWN": "Personal Projects",
+    "OWN_DESC": "Personal and practice projects where I explore new technologies and frameworks, applying best practices and experimenting with my own ideas."
+  },
+  "CONTACT": {
+    "TITLE": "Contact",
+    "NAME": "Name",
+    "EMAIL": "Email",
+    "SUBJECT": "Subject",
+    "MESSAGE": "Message",
+    "BUTTON": "Send",
+    "PLACEHOLDER_NAME": "Your name",
+    "PLACEHOLDER_EMAIL": "Your email",
+    "PLACEHOLDER_SUBJECT": "Subject",
+    "PLACEHOLDER_MESSAGE": "Your message",
+    "ERRORS": {
+      "NAME": "This field is required.",
+      "EMAIL_REQUIRED": "This field is required.",
+      "EMAIL_INVALID": "Invalid email address.",
+      "SUBJECT": "This field is required.",
+      "MESSAGE_REQUIRED": "This field is required.",
+      "MESSAGE_MINLENGTH": "Must be at least {{length}} characters.",
+      "FORM_INVALID": "Please check the form before submitting."
+    },
+    "SUCCESS": "Message sent successfully!",
+    "FAILURE": "Failed to send the message. Please try again later.",
+    "EMAIL_FALLBACK": "Message couldn’t be sent right now. You can try again later or email me directly at:"
+  },
+  "FOOTER": {
+    "GREETING": "Thank you for visiting !",
+    "TECHS": "Some technologies I know:"
+  }
+}

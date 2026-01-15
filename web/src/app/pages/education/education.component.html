@@ -1,0 +1,102 @@
+<!-- education.component.html -->
+<div class="px-4 flex flex-column max-width">
+  <div class="flex gap-2 align-items-center">
+    <h2>
+      {{ "EDUCATION.TITLE" | translate }}
+      <ng-container *ngIf="selectedItem() as it">
+        / {{ t(it.name) }}</ng-container
+      >
+    </h2>
+  </div>
+
+  <!-- Loader (CLS-safe) -->
+  <div *ngIf="loading()" class="flex flex-column gap-4">
+    <p-skeleton height="2rem" width="14rem"></p-skeleton>
+    <div *ngFor="let _ of [1, 2, 3]">
+      <div class="flex justify-content-between py-3">
+        <div class="flex gap-2 align-items-center">
+          <p-skeleton shape="circle" size="2rem"></p-skeleton>
+          <p-skeleton height="1.5rem" width="16rem"></p-skeleton>
+        </div>
+        <p-skeleton height="1rem" width="8rem"></p-skeleton>
+      </div>
+      <div class="flex justify-content-between gap-3">
+        <p-skeleton height="1rem" width="10rem"></p-skeleton>
+        <p-skeleton height="1.75rem" width="2rem"></p-skeleton>
+      </div>
+      <div class="flex gap-2 flex-wrap py-2 minh-icons">
+        <p-skeleton height="1.5rem" width="3rem"></p-skeleton>
+        <p-skeleton height="1.5rem" width="3rem"></p-skeleton>
+      </div>
+      <p-divider></p-divider>
+    </div>
+  </div>
+
+  <!-- Lista -->
+  <div *ngIf="!loading() && !selectedKey()" class="flex flex-column gap-4">
+    <div *ngFor="let it of items()">
+      <div class="flex justify-content-between py-3">
+        <div class="flex gap-2 align-items-center">
+          <p class="pi pi-graduation-cap pr-1"></p>
+          <h4 class="minh-heading">{{ t(it.name) }}</h4>
+        </div>
+        <p class="text-gray-400 minh-dates">{{ t(it.dates) }}</p>
+      </div>
+
+      <div class="flex justify-content-between gap-3">
+        <p class="minh-role">{{ t(it.role) }}</p>
+        <h4
+          *ngIf="it.hasCertificate"
+          class="pi pi-eye cursor-pointer text-2xl"
+          (click)="selectedItem()"
+        ></h4>
+      </div>
+
+      <div class="flex gap-2 flex-wrap py-2 mt-1 minh-icons">
+        <ng-container *ngFor="let icon of iconsOf(it)">
+          <app-tech-icon [name]="icon"></app-tech-icon>
+        </ng-container>
+      </div>
+
+      <p-divider></p-divider>
+    </div>
+  </div>
+
+  <!-- Detalle -->
+  <div *ngIf="!loading() && selectedKey()" class="detalle-seleccionado">
+    <ng-container *ngIf="selectedItem() as it">
+      <div class="flex justify-content-between py-3">
+        <div class="flex gap-2 align-items-center">
+          <p class="pi pi-graduation-cap pr-1"></p>
+          <h4 class="minh-heading">{{ t(it.name) }}</h4>
+        </div>
+        <p class="text-gray-400 minh-dates">{{ t(it.dates) }}</p>
+      </div>
+
+      <div class="flex justify-content-between gap-3">
+        <p class="minh-role">{{ t(it.role) }}</p>
+        <h4
+          class="pi pi-eye-slash cursor-pointer text-2xl"
+          (click)="clearSelection()"
+        ></h4>
+      </div>
+
+      <div class="flex gap-2 flex-wrap py-2 mt-1 minh-icons">
+        <ng-container *ngFor="let icon of iconsOf(it)">
+          <app-tech-icon [name]="icon"></app-tech-icon>
+        </ng-container>
+      </div>
+
+      <div
+        class="flex justify-content-center align-items-center certificate mt-4 min-h-20rem"
+      >
+        <img
+          *ngIf="certificateSrc(it) as src"
+          [src]="src"
+          alt="Certificado"
+          class="certificate-img"
+        />
+      </div>
+    </ng-container>
+  </div>
+</div>

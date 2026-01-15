@@ -1,0 +1,2 @@
+Allow: /
+Sitemap: https://fedewoodward.com/sitemap.xml

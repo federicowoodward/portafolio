@@ -1,0 +1,69 @@
+<!-- experience.component.html -->
+
+<!-- Loader skeletons para prevenir CLS -->
+<div
+  *ngIf="loading(); else content"
+  class="px-4 flex flex-column max-width gap-4"
+>
+  <h2 class="sr-only">Loading Experience</h2>
+  <p-skeleton height="2rem" width="12rem" styleClass="mb-2"></p-skeleton>
+
+  <!-- 3 ítems de ejemplo como placeholder -->
+  <div class="skeleton-card" *ngFor="let _ of [1, 2, 3]">
+    <div class="flex justify-content-between py-3">
+      <div class="flex gap-2 align-items-center">
+        <p-skeleton shape="circle" size="2rem" styleClass="mr-2"></p-skeleton>
+        <p-skeleton height="1.5rem" width="16rem"></p-skeleton>
+      </div>
+      <p-skeleton height="1rem" width="8rem"></p-skeleton>
+    </div>
+
+    <p-skeleton height="1.25rem" width="14rem"></p-skeleton>
+
+    <div class="pt-3">
+      <p-skeleton height="1rem" width="100%"></p-skeleton>
+      <p-skeleton height="1rem" width="90%" styleClass="mt-2"></p-skeleton>
+      <p-skeleton height="1rem" width="85%" styleClass="mt-2"></p-skeleton>
+    </div>
+
+    <div class="flex gap-2 flex-wrap py-2 mt-3">
+      <p-skeleton height="1.5rem" width="3rem"></p-skeleton>
+      <p-skeleton height="1.5rem" width="3rem"></p-skeleton>
+      <p-skeleton height="1.5rem" width="3rem"></p-skeleton>
+    </div>
+    <p-divider></p-divider>
+  </div>
+</div>
+
+<!-- Contenido real -->
+<ng-template #content>
+  <div class="px-4 flex flex-column max-width" *ngIf="items().length">
+    <h2>{{ "EXPERIENCE.TITLE" | translate }}</h2>
+
+    <div class="flex flex-column gap-4">
+      <div *ngFor="let it of items()">
+        <div class="flex justify-content-between py-3">
+          <div class="flex gap-2 align-items-center">
+            <p class="pi pi-briefcase pr-1"></p>
+            <h4 class="minh-heading">{{ t(it.name) }}</h4>
+          </div>
+          <p class="text-gray-400 minh-dates">
+            {{ t(it.dates) }}
+          </p>
+        </div>
+
+        <p class="minh-role">{{ t(it.role) }}</p>
+
+        <ng-container *ngFor="let p of it.paragraphs || []">
+          <p class="pt-3 minh-paragraph">{{ t(p) }}</p>
+        </ng-container>
+
+        <div class="flex gap-2 flex-wrap py-2 mt-3 minh-icons">
+          <ng-container *ngFor="let icon of it.icons || []">
+            <app-tech-icon [name]="icon"></app-tech-icon>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>

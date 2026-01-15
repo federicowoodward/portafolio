@@ -1,0 +1,127 @@
+{
+  "HEADER": {
+    "SUBTITLE": "Desarollador de software",
+    "LOCATION": "Córdoba, Argentina"
+  },
+  "NAV": {
+    "ABOUT": "Sobre mí",
+    "EXPERIENCE": "Experiencia",
+    "EDUCATION": "Educación",
+    "SKILLS": "Skills",
+    "PROJECTS": "Proyectos"
+  },
+  "ABOUT": {
+    "TITLE": "Sobre mí",
+    "P1": "¡Hola! Soy Federico Woodward, desarrollador Fullstack con un fuerte enfoque en el desarrollo Frontend. Me especializo en las principales tecnologías modernas del ecosistema web y tengo sólidos conocimientos en diseño responsive y animaciones complejas.",
+    "P2": "También tengo experiencia trabajando con bases de datos, desarrollo de APIs y construcción de aplicaciones orientadas a la visualización interactiva de datos.",
+    "P3": "Me apasiona optimizar experiencias digitales, automatizar procesos, y trabajar con herramientas modernas para entregar productos eficientes, escalables y con un diseño cuidado. Domino el ecosistema Git, y tengo conocimientos básicos en despliegue de infraestructura."
+  },
+  "EXPERIENCE": {
+    "TITLE": "Experiencia laboral",
+    "ITEMS": {
+      "ENCODE": {
+        "NAME": "Encodelabs S.A.",
+        "ROLE": "Desarrollador Fullstack",
+        "DATES": "2024 - Actualidad",
+        "PARAGRAPHS": [
+          "Desarrollé diversas aplicaciones web utilizando Angular y Next, creando componentes reutilizables y optimizando el rendimiento de las aplicaciones. Construí interfaces responsivas siguiendo diseños de Figma y asegurando compatibilidad entre navegadores.",
+          "Construí servidores simples utilizando Node.js y Express, implementando envío de correos para diferentes webs.",
+          "También me encargué de armar diferentes configuraciones de Docker y Docker Compose para crear entornos de desarrollo y producción."
+        ],
+        "ICONS": ["angular", "node", "css", "git", "docker", "python", "nextjs"]
+      },
+      "KUNAN": {
+        "NAME": "Kunan S.A.",
+        "ROLE": "Desarrollador Fullstack",
+        "DATES": "2023 - 2024",
+        "PARAGRAPHS": [
+          "Desarrollé dashboards interactivos para reportes clínicos, encargándome tanto del diseño como de la implementación completa.",
+          "Planifiqué y presenté la arquitectura del proyecto a mis superiores utilizando tecnologías como Node.js, Google Connector (Apps Script) y Looker Studio."
+        ],
+        "ICONS": ["node", "git", "python", "mysql", "aws", "looker", "gcloud"]
+      },
+      "FREELANCE": {
+        "NAME": "Proyectos Freelance",
+        "ROLE": "Desarrollador Web",
+        "DATES": "2022 - Actualidad",
+        "PARAGRAPHS": [
+          "Realicé maquetación HTML, diseño CSS responsive y estructura de sitios web estáticos para distintos clientes.",
+          "También desarrollé pequeñas soluciones web con enfoque en rendimiento y accesibilidad."
+        ],
+        "ICONS": ["css", "git", "html"]
+      }
+    }
+  },
+  "EDUCATION": {
+    "TITLE": "Educación",
+    "ITEMS": {
+      "QUALITY": {
+        "NAME": "Quality ISAD",
+        "ROLE": "Tecnicatura en Desarollo de Software",
+        "DATES": "2023 - 2025",
+        "ICONS": [
+          "angular",
+          "node",
+          "css",
+          "git",
+          "docker",
+          "mysql",
+          "python",
+          "csharp"
+        ]
+      },
+      "ISO": {
+        "NAME": "ISO 27001/22",
+        "ROLE": "Certificación ISO 27001/22",
+        "DATES": "2025"
+      },
+      "CODER": {
+        "NAME": "CoderHouse",
+        "ROLE": "Bootcamp Fullstack",
+        "DATES": "2022 - 2024",
+        "ICONS": ["node", "react", "git", "css", "mongo", "html"],
+        "HAS_CERTIFICATE": "true"
+      },
+      "PIL": {
+        "NAME": "PIL 2023 | ISPC",
+        "ROLE": "Python y bases de datos",
+        "DATES": "2023",
+        "ICONS": ["python", "mysql", "mongo"]
+      }
+    }
+  },
+  "PROJECTS": {
+    "COLLAB": "Proyectos Profesionales Colaborativos",
+    "COLLAB_DESC": "Estos son proyectos profesionales en los que participé como desarrollador, contribuyendo tanto al diseño como a la programación en equipo.",
+    "OWN": "Proyectos Personales",
+    "OWN_DESC": "Proyectos personales y de práctica donde exploro nuevas tecnologías y frameworks, aplicando buenas prácticas y experimentando con ideas propias."
+  },
+  "CONTACT": {
+    "TITLE": "Contacto",
+    "NAME": "Nombre",
+    "EMAIL": "Correo electrónico",
+    "SUBJECT": "Asunto",
+    "MESSAGE": "Mensaje",
+    "BUTTON": "Enviar mensaje",
+    "PLACEHOLDER_NAME": "Tu nombre",
+    "PLACEHOLDER_EMAIL": "tu@email.com",
+    "PLACEHOLDER_SUBJECT": "Motivo del mensaje",
+    "PLACEHOLDER_MESSAGE": "Cuentame más...",
+    "ERRORS": {
+      "NAME": "Este campo es obligatorio.",
+      "EMAIL_REQUIRED": "Este campo es obligatorio.",
+      "EMAIL_INVALID": "El correo no es válido.",
+      "SUBJECT": "Este campo es obligatorio.",
+      "MESSAGE_REQUIRED": "Este campo es obligatorio.",
+      "MESSAGE_MINLENGTH": "Debe tener al menos {{length}} caracteres.",
+      "FORM_INVALID": "Revisá los campos del formulario antes de enviar."
+    },
+    "SUCCESS": "¡Mensaje enviado correctamente!",
+    "FAILURE": "No se pudo enviar el mensaje. Intentalo más tarde.",
+    "EMAIL_FALLBACK": "No se pudo enviar el mensaje en este momento, puedes escribirme mas tarde o directamente a:"
+  },
+  "FOOTER": {
+    "GREETING": "Gracias por visitar !",
+    "TECHS": "Algunas tecnologías que conozco:"
+  }
+}

@@ -1,0 +1,66 @@
+<!-- projects.component.html -->
+<div class="">
+  <!-- Loader -->
+  <div *ngIf="loading()" class="px-4 max-width">
+    <p-skeleton height="2rem" width="20rem" class="mb-2"></p-skeleton>
+    <p-skeleton height="1.25rem" width="100%" class="mb-3"></p-skeleton>
+
+    <div class="flex flex-column md:flex-row align-items-center gap-4 py-4">
+      <p-skeleton height="12rem" width="100%"></p-skeleton>
+      <p-skeleton height="12rem" width="100%"></p-skeleton>
+    </div>
+
+    <div class="flex flex-column md:flex-row align-items-center gap-4 py-4">
+      <p-skeleton height="12rem" width="100%"></p-skeleton>
+      <p-skeleton height="12rem" width="100%"></p-skeleton>
+    </div>
+
+    <p-divider></p-divider>
+
+    <p-skeleton height="2rem" width="14rem" class="mb-2"></p-skeleton>
+    <p-skeleton height="1.25rem" width="90%"></p-skeleton>
+
+    <div class="grid grid-nogutter md:grid-cols-2 gap-4 pt-4 max-width">
+      <p-skeleton height="10rem" width="100%"></p-skeleton>
+      <p-skeleton height="10rem" width="100%"></p-skeleton>
+    </div>
+  </div>
+
+  <!-- Contenido -->
+  <ng-container *ngIf="!loading()">
+    <div class="px-4 max-width">
+      <h2>{{ t(texts()?.collabTitle) }}</h2>
+      <p class="text-lg py-2">{{ t(texts()?.collabDesc) }}</p>
+    </div>
+
+    <div class="grid grid-nogutter  max-width">
+      <div
+        class="col-12 md:col-6 pb-4"
+        *ngFor="let p of collab(); trackBy: trackByKey"
+      >
+        <app-iframe-card [title]="t(p.title)" [url]="p.url"></app-iframe-card>
+      </div>
+    </div>
+
+    <div class="py-4 max-width">
+      <p-divider></p-divider>
+    </div>
+
+    <div class="px-4 max-width">
+      <h2>{{ t(texts()?.ownTitle) }}</h2>
+      <p class="text-lg py-2">{{ t(texts()?.ownDesc) }}</p>
+    </div>
+
+    <div class="grid grid-nogutter md:grid-cols-2 gap-4 pt-4 max-width">
+      <ng-container *ngFor="let g of personal()">
+        <app-github-card
+          class="col-12 md:col"
+          [fullName]="g.fullName"
+          [description]="t(g.description)"
+          [avatarUrl]="g.avatarUrl"
+          [htmlUrl]="g.htmlUrl"
+        ></app-github-card>
+      </ng-container>
+    </div>
+  </ng-container>
+</div>
